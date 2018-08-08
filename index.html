@@ -1,0 +1,170 @@
+  <!doctype html>
+<html>
+  <head>
+    <title>First Aid &amp; CPR Reanimation</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Instructions for Reanimation, providing CPR and first aid in emergency cases">
+    <meta name="subject" CONTENT="Provide first aid and CPR with a beat rhythm instructor">
+    <meta name="Keywords" CONTENT="CPR reanimation emergency first aid unconscious beat rhythm">
+
+    <link rel="icon" type="image/png" href="favicon/favicon.png" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <style>
+    	@font-face {
+    	    font-family: Cataclysmo;
+    	    src: url(font/Cataclysmo.otf);
+    	}
+      body > .container {
+  		    padding-top: 60px
+      }
+  	.navbar-brand {
+  		font-family: sans-serif;
+      font-weight: bold;
+  		padding: 5px;
+  		padding-bottom: 0px;
+  		margin: 5px;
+  		margin-bottom: 0px;
+  		font-size: 36px;
+  		border-bottom: 2px dashed red;
+  		border-top: 2px dashed red;
+  	}
+
+    i.fas {
+      color: red;
+    }
+
+    h1 {
+      font-weight: bold;
+    }
+
+  	.navbar {
+  		background-color: white;
+  	}
+
+    /* Landscape phones and down, position collapse navbar and disable logo */
+    @media (max-width: 550px) {
+      .navbar-toggler {
+      margin-top: 10px;
+      margin-left:auto; margin-right:0;
+      }
+      .fa-nav {
+      display: none;
+      }
+    }
+    @media (max-width: 315px) {
+      body > .container {
+          padding-top: 90px
+      }
+    }
+	</style>
+  </head>
+  <body>
+
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-light navbar-expand-md fixed-top">
+        <a class="navbar-brand" href="#">
+          <span class="fa-nav"><i id="fa-nav-fb" class="fas fa-briefcase-medical fa-md" style="margin-right: 10px; "></i></span>
+          FIRST AID  <span class="fa-nav">&amp; CPR</span>
+           <span class="fa-nav"><i id="fa-nav-fb" class="fas fa-briefcase-medical fa-md" style="margin-right: 10px; "></i></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">DISCLAIMER</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Begin page content -->
+    <main role="main" class="container">
+      <div id="isNotBreathing">
+        <h1 class="mt-5">Person unconscious &amp; NOT breathing?</h1>
+        <ol class="list-group">
+         <li class="list-group-item">
+             <h2>1. Call Ambulance - <a href="https://en.wikipedia.org/wiki/List_of_emergency_telephone_numbers">click here for number</a></h2>
+         </li>
+         <li class="list-group-item">
+           <h2>2. Perform CPR</h2>
+           <ol class="list-group">
+            <li class="list-group-item">
+              <h3>1. Do 30x chest compressions</h3>
+              <audio id="clickSound"></audio>
+            </li>
+            <li class="list-group-item">
+              <h3>2. Do 2x emergency breaths</h3>
+            </li>
+            <li class="list-group-item">
+              <h3>3. Repeat steps 1. and 2. until ambulance arrives</h3>
+            </li>
+           </ol>
+         </li>
+        </ol>
+      </div>
+
+      <div id="isBreathing">
+        <h1 class="mt-5">Person unconscious &amp; IS breathing?</h1>
+        <ol class="list-group">
+         <li class="list-group-item">
+           <h2>1. Call Ambulance - <a href="https://en.wikipedia.org/wiki/List_of_emergency_telephone_numbers">click here for number</a></h2>
+         </li>
+         <li class="list-group-item">
+             <h2>2. Bring in safe distance</h2>
+         </li>
+         <li class="list-group-item">
+           <h2>3. Bring in recovery position</h2>
+           <ol class="list-group">
+            <li class="list-group-item">
+                <h3>1. Call Ambulance</h3>
+            </li>
+            <li class="list-group-item">
+              <h3>2. Perform CPR</h3>
+            </li>
+           </ol>
+         </li>
+        </ol>
+      </div>
+
+      <div id="other">
+        <h1 class="mt-5">Person conscious / other injury</h1>
+        <p class="lead">This website serves solely as an immediate aid for quickly instructing how to perform CPR in emergency situations. For other cases, please visit one of these sites:</p>
+      </div>
+
+      <div id="disclaimer">
+        <h1 class="mt-5">Disclaimer</h1>
+        <p class="lead">The owner of this website does not take any responsibility for badly executed first aid as described on this website. To have reliable information sourced from experts, please consult your local emergency services provider or following pages: </p>
+      </div>
+
+      <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code>padding-top: 60px;</code> on the <code>body &gt; .container</code>.</p>
+      <p>Back to <a href="../sticky-footer">the default sticky footer</a> minus the navbar.</p>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Place sticky footer content here.</span>
+      </div>
+    </footer>
+
+  </body>
+</html>
