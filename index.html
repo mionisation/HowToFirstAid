@@ -17,12 +17,25 @@
     <script src="js/bootstrap.min.js"></script>
 
     <style>
+      body {
+        font-size: 1rem;
+      }
+      #inner-list {
+        border: 3px solid rgba(0, 0, 0, 0.637)
+      }
     	@font-face {
     	    font-family: Cataclysmo;
     	    src: url(font/Cataclysmo.otf);
     	}
       body > .container {
-  		    padding-top: 60px
+  		    padding-top: 60px;
+          font-size: 1.3rem;
+      }
+      a.anchor {
+        display: block;
+        position: relative;
+        top: -60px;
+        visibility: hidden;
       }
   	.navbar-brand {
   		font-family: sans-serif;
@@ -40,6 +53,16 @@
       color: red;
     }
 
+    .license {
+      font-size: 12px;
+      font-style: italic;
+    }
+    #fa-nav-fb {
+      font-size: 2rem;
+      position: absolute;
+      cursor: pointer;
+      text-shadow: -1px 0 white, 0 2px white, 2px 0 white, 0 -1px white;
+    }
     h1 {
       font-weight: bold;
     }
@@ -47,6 +70,13 @@
   	.navbar {
   		background-color: white;
   	}
+
+    .guideImg {
+      max-width: 520px;
+    }
+    .animation {
+      cursor: pointer;
+    }
 
     /* Landscape phones and down, position collapse navbar and disable logo */
     @media (max-width: 550px) {
@@ -71,9 +101,9 @@
       <!-- Fixed navbar -->
       <nav class="navbar navbar-light navbar-expand-md fixed-top">
         <a class="navbar-brand" href="#">
-          <span class="fa-nav"><i id="fa-nav-fb" class="fas fa-briefcase-medical fa-md" style="margin-right: 10px; "></i></span>
+          <span class="fa-nav"><i  class="fas fa-briefcase-medical fa-md" style="margin-right: 10px; "></i></span>
           FIRST AID  <span class="fa-nav">&amp; CPR</span>
-           <span class="fa-nav"><i id="fa-nav-fb" class="fas fa-briefcase-medical fa-md" style="margin-right: 10px; "></i></span>
+           <span class="fa-nav"><i class="fas fa-briefcase-medical fa-md" style="margin-right: 10px; "></i></span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -81,16 +111,16 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="#isNotBreathing">NOT BREATHING <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="#isBreathing">IS BREATHING</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">DISCLAIMER</a>
+              <a class="nav-link" href="#other">Other</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
+              <a class="nav-link" href="#disclaimer">DISCLAIMER</a>
             </li>
           </ul>
         </div>
@@ -99,72 +129,129 @@
 
     <!-- Begin page content -->
     <main role="main" class="container">
+      <a class="anchor" id="isNotBreathing"></a>
       <div id="isNotBreathing">
         <h1 class="mt-5">Person unconscious &amp; NOT breathing?</h1>
         <ol class="list-group">
          <li class="list-group-item">
-             <h2>1. Call Ambulance - <a href="https://en.wikipedia.org/wiki/List_of_emergency_telephone_numbers">click here for number</a></h2>
+             <h2>1. Call Ambulance - <a href="https://en.wikipedia.org/wiki/List_of_emergency_telephone_numbers" target="_blank">click here for number</a></h2>
          </li>
          <li class="list-group-item">
            <h2>2. Perform CPR</h2>
-           <ol class="list-group">
+           <ol id="inner-list" class="list-group">
             <li class="list-group-item">
-              <h3>1. Do 30x chest compressions</h3>
-              <audio id="clickSound"></audio>
+              <h3>A) Do <span style="font-weight: bold">30x</span> chest compressions</h3>
+              Push HARD about 100 times in a minute. This animation indicates the correct rhytm:
+              <div id="heartbeatAnimation" onclick="unmute();">
+                <i id="fa-nav-fb" class="fas fa-volume-up fa-md" style="margin-right: 10px; ">Click to HEAR rhythm!</i>
+                <audio id="metronome" src="sound/metronome.mp3" type="audio/mpeg" muted="muted">
+                (Your browser does not support the audio element.)
+                </audio>
+                <img class="guideImg animation" src="img/chest_compressions.gif">
+
+              </div>
+              <p class="license">Video by <a href="https://www.youtube.com/watch?v=pacoTshuOto" >Bangkok Hospital Phuket</a>, Edited by <a href="http://commons.wikimedia.org/wiki/User:Mikael_Häggström" title="User:Mikael_Häggström">Mikael_Häggström</a>, <a href="https://creativecommons.org/licenses/by/3.0/deed.en" >Creative Commons 3.0 Unported</a>, <a href="https://en.wikipedia.org/wiki/File:Chest_compressions.gif">Link</a></p>
+
             </li>
             <li class="list-group-item">
-              <h3>2. Do 2x emergency breaths</h3>
+              <h3>B) Do <span style="font-weight: bold">2x</span> emergency breaths</h3>
+              <p>Tilt head backwards. Hold chin with one hand, pinch nose with the other. Apply mouth to mouth.</p>
+              
+              <img class="guideImg" src="img/Insulfation.jpg">
+              <p class="license">Image by <a href="http://commons.wikimedia.org/wiki/User:Rama" title="User:Rama">Rama</a> - <span class="int-own-work" lang="en">Own work</span>, <a href="https://creativecommons.org/licenses/by-sa/2.0/fr/deed.en" title="Creative Commons Attribution-Share Alike 2.0 fr">CC BY-SA 2.0 fr</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=43759">Link</a></p>
             </li>
             <li class="list-group-item">
-              <h3>3. Repeat steps 1. and 2. until ambulance arrives</h3>
+              <h3>C) Repeat Steps A. and B. until ambulance arrives!</h3>
             </li>
            </ol>
          </li>
         </ol>
       </div>
 
+      <a class="anchor" id="isBreathing"></a>
       <div id="isBreathing">
         <h1 class="mt-5">Person unconscious &amp; IS breathing?</h1>
         <ol class="list-group">
          <li class="list-group-item">
-           <h2>1. Call Ambulance - <a href="https://en.wikipedia.org/wiki/List_of_emergency_telephone_numbers">click here for number</a></h2>
+           <h2>1. Call Ambulance - <a href="https://en.wikipedia.org/wiki/List_of_emergency_telephone_numbers" target="_blank">click here for number</a></h2>
          </li>
          <li class="list-group-item">
-             <h2>2. Bring in safe distance</h2>
+             <h2>2. Bring in safe distance, away from danger</h2>
+             Stretch both arms of the person over their head to pull them easily.
          </li>
          <li class="list-group-item">
            <h2>3. Bring in recovery position</h2>
            <ol class="list-group">
-            <li class="list-group-item">
-                <h3>1. Call Ambulance</h3>
-            </li>
-            <li class="list-group-item">
-              <h3>2. Perform CPR</h3>
-            </li>
-           </ol>
+              <li class="list-group-item">
+                A) Place persons nearest arm in right angle on ground
+              </li>
+              <li class="list-group-item">
+                B) Pick OTHER, farer away arm and place palm on opposite cheek
+              </li>
+              <li class="list-group-item">
+                C) Bend up farer away leg, so that foot touches floor
+              </li>
+              <li class="list-group-item">
+                D) Pull this knee towards you so that whole body crouches over
+              </li>
+              <li class="list-group-item">
+                  E) Check that airways are free 
+              </li>
+                
+             </ol>
+           <img class="guideImg" src="img/recovery_position.svg">
+           <p class="license">Image by <a href="http://commons.wikimedia.org/wiki/User:Rama" title="User:Rama">Rama</a> - <span class="int-own-work" lang="en">Own work</span>, <a href="https://creativecommons.org/licenses/by-sa/2.0/fr/deed.en" title="Creative Commons Attribution-Share Alike 2.0 fr">CC BY-SA 2.0 fr</a>, <a href="https://en.wikipedia.org/wiki/File:Recovery_position.svg">Link</a></p>
+
+           <h2><a href="https://www.epilepsysociety.org.uk/step-step-recovery-position" target="_blank">Click here for more details</a></h2>
          </li>
         </ol>
       </div>
 
+      <a class="anchor" id="other"></a>
       <div id="other">
         <h1 class="mt-5">Person conscious / other injury</h1>
-        <p class="lead">This website serves solely as an immediate aid for quickly instructing how to perform CPR in emergency situations. For other cases, please visit one of these sites:</p>
+        <p class="lead">This website serves solely as an immediate aid for quickly instructing how to perform CPR in emergency situations. For other cases, please visit <a href="https://www.nhs.uk/conditions/first-aid/" target="blank_">the dedicated NHS website</a>
+        </p>
       </div>
 
+      <a class="anchor" id="disclaimer"></a>
       <div id="disclaimer">
         <h1 class="mt-5">Disclaimer</h1>
         <p class="lead">The owner of this website does not take any responsibility for badly executed first aid as described on this website. To have reliable information sourced from experts, please consult your local emergency services provider or following pages: </p>
+        <ul>
+          <li >
+            <a href="https://www.nhs.uk/conditions/first-aid/" target="blank_">First aid information (NHS, english)</a>
+          </li>
+          <li >
+            <a href="https://www.gesundheit.gv.at/krankheiten/erste-hilfe/notdienst/massnahmen" target="blank_">Erste Hilfe Basismaßnahmen (Gesundheitsministerium, deutsch)</a>
+          </li>
+          <li >
+            <a href="https://www.croix-rouge.fr/Je-me-forme/Particuliers/Les-6-gestes-de-base" target="blank_">Les six gestes de base - Premiers Secours (Croix-Rouge, français)</a>
+          </li>
+        </ul>
       </div>
-
-      <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code>padding-top: 60px;</code> on the <code>body &gt; .container</code>.</p>
-      <p>Back to <a href="../sticky-footer">the default sticky footer</a> minus the navbar.</p>
     </main>
 
     <footer class="footer">
       <div class="container">
-        <span class="text-muted">Place sticky footer content here.</span>
+        <span class="text-muted">Created by <a href="https://michaelion.io" target="blank_">Michael Ion</a></span>
       </div>
     </footer>
+
+
+      <script type="text/javascript" >
+      var intervalID = window.setInterval(heartbeat, 600);
+      var metronome = document.getElementById("metronome");
+
+      function unmute() {
+        metronome.muted = false;
+      }
+
+      function heartbeat() {
+         // Your code here
+         metronome.play();
+      }
+      </script>
 
   </body>
 </html>
